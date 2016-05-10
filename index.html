@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/style.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script type="text/javascript" src="/app.js"></script>
+<title>Camper News</title>
+</head>
+<body>
+	<header>
+  <h1 class="title">FreeCodeCamp</h1>
+  <h2 class="tagline">Camper News</h2>
+</header>
+<main ng-app="camperNews" id="wrapper">
+  <section ng-controller="newsCtrl" id="columns"><a href="{{item.link}}" target="_blank" ng-repeat="item in news">
+      <article class="pin"><img ng-src="{{item.image}}" err-src="{{item.author.picture}}"/>
+        <p>{{item.headline}}</p>
+        <footer>
+         <!-- <p class="comments">{{item.comments.length}} Comments</p> -->
+          <p class="author">{{item.author.username}}</p>
+        </footer>
+      </article></a></section>
+</main>
+
+</body>
+</html>
